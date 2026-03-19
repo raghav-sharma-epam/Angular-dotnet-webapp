@@ -1,0 +1,42 @@
+<p>audio-books works!</p>
+
+
+
+<table class="col-md-9  offset-1 ">
+    <tr class="">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>      
+      <th>Price</th>
+      <th>Genre</th>
+     <th> Picture</th>
+      <th>ProdId</th>
+      <th>ProductName</th>
+      <th> Delete</th>
+
+
+
+    </tr>
+    
+    <tbody style ="width:102px" class="mr-20" *ngFor="let data of BookData">
+      
+    <tr>
+      <td><a routerLink="/BookById/{{data.id}}" 
+        >{{data.id}} </a> </td>
+      <td style ="width:102px">{{data.name}}</td>
+      <td>{{data.description}}</td>
+      <td>{{data.price}}</td>
+      <td>{{data.genre}}</td>
+     <td>
+      <img src="{{picture}}">
+      
+     </td>
+      <td class="">{{data.productId}}</td>
+      <td class="">{{data.productRef.name}}</td>
+      <button class="btn btn-primary" style="margin-top: 50px;
+      " (click)="onDelete(data.id)">Delete</button>
+      
+    </tr>
+    
+    
+</table>

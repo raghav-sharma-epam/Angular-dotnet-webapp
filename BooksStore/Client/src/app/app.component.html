@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">BOOKS</a>
+    <a class="navbar-brand" 
+    routerLink="/register" >Register NewUser </a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          
+        </li>
+        
+        <div class="nav-item" *ngIf="currentuser$ | async">
+          <ul class="navbar-collapse">
+            <a class="nav-link waves-effect waves-light" routerLink="/audiobooks" routerLinkActive="active">BooksDetail</a>
+            <a class="nav-link waves-effect waves-light" routerLink="/BookTypes"  routerLinkActive="active">BookTypes</a>
+            <a class="nav-link waves-effect waves-light" routerLink="/bookDetailAdd"  routerLinkActive="active">BookDetailAdd</a>
+            <a class="nav-link waves-effect waves-light" routerLink="/upload"  routerLinkActive="active">UploadImage</a>
+             
+       
+      
+          </ul>
+         
+        
+        </div>
+       
+
+        
+      </ul>
+
+      <div *ngIf="!login">
+        <form #userlogin = "ngForm" (ngSubmit) = "UserLogin(userlogin.value)" autocomplete="off" 
+        style="margin-left: 600px;">
+          <input type="text" name = "UserName"  placeholder = "UserName"  ngModel  required>
+          &nbsp;
+          <input type = "password" name = "password" placeholder = "password" ngModel>
+          &nbsp;
+          <button type = "submit" value = "submit">Submit</button>
+       </form>
+      </div>
+      
+     
+
+
+      <div *ngIf="login" class="mybtn-right">
+      
+
+      <div class="mybtn-right">
+        <button class="btn btn-primary btn-center mr-9 btnstyle"
+        >Welcome LoggedIn user {{this.login.userName}}</button>
+        &nbsp;
+        <button (click)="logout()" class="btn btn-primary btn-center mr-9 btnstyle"
+        >Logout</button>
+      </div>
+      </div>
+      
+
+    
+
+        
+    </div>
+    
+  </nav>
+  <!-- <div *ngIf="loggedIn == false">
+    <app-login (call)="checkforsyncdata($event)"></app-login>
+  </div> -->
+ 
+
+
+<router-outlet></router-outlet>

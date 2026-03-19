@@ -1,0 +1,63 @@
+<p>register works!</p>
+
+
+<div class="d-flex justify-content-center mt-52">
+    <form [formGroup]="Registerform" (ngSubmit)="OnSubmit()">
+
+   <div class="form-group " >
+     <label for="userName" >UserName</label>
+     &nbsp;
+     <input formControlName ="userName" type="text" placeholder="Name">
+   </div>
+   &nbsp;
+
+   <div class="form-label-group" >
+    <label for="password">Password</label>
+    &nbsp;
+    <input type="password" formControlName ="password" type="password" placeholder="Password">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="city">city</label>
+    &nbsp;
+    <input type="text" formControlName ="city" type="text" placeholder="city">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="country">country</label>
+    &nbsp;
+    <input type="text" formControlName ="country" type="text" placeholder="country">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="gender">Gender</label>
+    &nbsp;
+    <input type="text" formControlName ="gender" type="text" placeholder="gender">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="interest">interest</label>
+    &nbsp;
+    <input type="text" formControlName ="interest" type="text" placeholder="interest">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="introduction">Introduction</label>
+    &nbsp;
+    <input type="text" formControlName ="introduction" type="text" placeholder="Password">
+  </div>
+  &nbsp;
+  <div class="form-label-group" >
+    <label for="dateofbirth">DateOfBirth</label>
+    &nbsp;
+    <input type="date" formControlName ="dateofbirth" type="date" placeholder="dateofbirth">
+  </div>
+
+&nbump;
+&nbsp;
+  <div>
+    <button class="btn btn-primary center" style="margin-left: 150px;"  [disabled]="!Registerform.valid" 
+type="submit" >Submit</button>
+  </div>
+    </form>
+</div>

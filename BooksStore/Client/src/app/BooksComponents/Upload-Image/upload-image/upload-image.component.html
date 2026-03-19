@@ -1,0 +1,102 @@
+<div class="card h-100 shadow-sm">
+ 
+  <div class="card-body">
+    <!-- Existing images list -->
+    <div *ngIf="GetImgs; else noImages">
+      <div class="row g-3 mb-4">
+        <div class="col-12" *ngFor="let data of GetImgs">
+          <div class="d-flex align-items-center border rounded p-2">
+            <img
+              class="me-3 rounded"
+              [src]="data.url"
+              [alt]="data.title || data.fileName"
+              style="width: 80px; height: 80px; object-fit: cover;"
+            />
+            <div class="flex-grow-1">
+              <h6 class="mb-1">{{ data.title || 'Untitled' }}</h6>
+              <small class="text-muted">File: {{ data.fileName }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noImages>
+      <div class="alert alert-info mb-4">
+        No images uploaded yet. Use the form below to upload one.
+      </div>
+    </ng-template>
+
+    <hr class="my-4" />
+
+    <!-- Upload form -->
+    <h5 class="mb-3">Upload image</h5>
+
+    <form #form="ngForm" (ngSubmit)="DetailSubmit()" novalidate>
+      <!-- File input -->
+      <div class="mb-3">
+        <label class="form-label">Select image <span class="text-danger">*</span></label>
+        <input
+          type="file"
+          accept="image/*"
+          class="form-control"
+          (change)="FileUploadChange($event)"
+          required
+        />
+        <div class="form-text">
+          Supported formats: JPG, PNG, GIF. Max size (example): 5 MB.
+        </div>
+      </div>
+
+      <!-- Optional preview (if you have a previewUrl in TS)
+      <div class="mb-3" *ngIf="previewUrl">
+        <label class="form-label">Preview</label>
+        <div class="border rounded p-2 d-inline-block">
+          <img
+            [src]="previewUrl"
+            alt="Image preview"
+            style="max-width: 200px; max-height: 200px; object-fit: cover;"
+          />
+        </div>
+      </div> -->
+
+      <!-- File name -->
+      <div class="mb-3">
+        <label for="filename" class="form-label">File name</label>
+        <input
+          id="filename"
+          type="text"
+          class="form-control"
+          placeholder="Enter file name"
+          name="filename"
+          [(ngModel)]="FileName"
+        />
+      </div>
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+        <input
+          id="title"
+          type="text"
+          class="form-control"
+          placeholder="Enter image title"
+          name="title"
+          [(ngModel)]="title"
+          required
+        />
+      </div>
+
+      <!-- Submit -->
+      <div class="d-flex justify-content-end">
+        <button
+          type="submit"
+          class="btn btn-dark"
+          [disabled]="form.invalid"
+        >
+          Upload
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+&nbsp;
+
+<div *ngIf="loginUserData" class="text-danger center">
+  'User {{loginUserData.userName}}  Logined Successfully'
+  </div>
+<div class="d-flex justify-content-center mt-52">
+    <form [formGroup]="LoginForm" (ngSubmit)="OnSubmit()">
+
+   <div class="form-group " >
+     <label for="userName" >UserName</label>
+     &nbsp;
+     <input formControlName ="userName" type="text" placeholder="Name">
+   </div>
+   &nbsp;
+
+   <div class="form-label-group" >
+    <label for="password">Password</label>
+    &nbsp;
+    <input type="password" formControlName ="password" type="password" placeholder="Password">
+  </div>
+&nbump;
+&nbsp;
+  <div>
+    <button class="btn btn-primary center" style="margin-left: 150px;"  [disabled]="!LoginForm.valid" 
+type="submit" >Submit</button>
+  </div>
+    </form>
+</div>
+

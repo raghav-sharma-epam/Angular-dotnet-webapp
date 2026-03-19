@@ -1,0 +1,15 @@
+<p>child works!</p>
+
+<div class="d-flex justify-content-center mt-52">
+
+    <button (click)="Add()" class="btn btn-primary">Add</button>&nbsp;
+    
+    <button (click)="Delete()" class="btn btn-primary">Delete</button>
+    </div>
+    
+    <div class="d-flex bold" >
+    <label>Value is ::     {{Count}}</label>
+    </div>
+    <ng-template *ngif=isVisible>
+        Name is {{Name}}
+    </ng-template>

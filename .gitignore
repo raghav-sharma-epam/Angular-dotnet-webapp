@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/MyTestWork.slnx/FileContentIndex/f224de21-887c-43b6-a98f-fb841a1c77ff.vsidx
+/.vs/MyTestWork.slnx/v18/DocumentLayout.backup.json
+/.vs/VSWorkspaceState.json
+/.vs/MyTestWork/CopilotIndices/18.4.105.37992/CodeChunks.db
+/.vs/MyTestWork/CopilotIndices/18.4.105.37992/SemanticSymbols.db
+/.vs/MyTestWork/CopilotIndices/18.0.981.45449/SemanticSymbols.db
+/.vs/MyTestWork/CopilotIndices/18.0.981.45449/CodeChunks.db
+/.vs/slnx.sqlite
+/.vs/MyTestWork.slnx/v18/.wsuo
+/BooksStore/gitignore .gitignore

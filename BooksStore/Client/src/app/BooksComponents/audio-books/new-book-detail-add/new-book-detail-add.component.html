@@ -1,0 +1,69 @@
+<p>new-book-detail-add works!</p>
+<div class="d-flex justify-content-center mt-52">
+    <form [formGroup]="BookDetailForm" (ngSubmit)="OnSubmit()">
+
+   <div class="form-group " >
+     <label for="name" >Name</label>
+     <input formControlName ="name" type="text" placeholder="Name">
+   </div>
+
+   <div class="form-label-group" >
+    <label for="description">Description</label>
+    <input formControlName ="description" type="text" placeholder="Description">
+  </div>
+
+  <div class="form-group " >
+    <label for="Price">Price</label>
+    <input formControlName ="price" type="text" placeholder="Price">
+  </div>
+
+  <div class="form-group" >
+    <label for="Genre">Genre</label>
+    <input formControlName ="genre" type="text" placeholder="Genre">
+  </div>
+
+
+  <div class="form-group" >
+    <label for="Picture">Picture</label>
+    <input formControlName ="picture" type="text" placeholder="Picture">
+  </div>
+
+  <!-- <div class="form-group" >
+    <label for="productId">ProductID</label>
+    <input formControlName ="productId" type="text" placeholder="productId">
+  </div> -->
+
+<div class="form-group">
+  <label for="productenum">Product Select</label>
+  <select class="form-select-input" id="productenum" type="select" formControlName="productId" >
+    
+  <option [ngValue]="null">Select one...</option>
+  <option *ngFor="let type of productenum | keyvalue" [ngValue]="type.value">{{type.key}}</option>    
+  </select>
+
+</div>
+
+<div class="form-group">
+  <label for="brandenum">Product Select</label>
+  <select class="form-select-input" id="productenum" placeholder="Select" type="select" formControlName="brandId" >
+    
+  <option *ngFor="let type of brandenum | keyvalue" [ngValue]="type.value">{{type.key}}</option>    
+  </select>
+
+</div>
+
+<!-- <div class="form-group form-check form-check-inline" *ngFor="let type of values">
+  <input class="form-check-input" type="checkbox" formControlName="type" id="type">
+  <label class="form-check-label" for="type">{{type}}</label>
+</div> -->
+
+
+
+
+<button class="btn btn-primary center"[disabled]="!BookDetailForm.valid" 
+type="submit" >Submit</button>
+   <div *ngIf="response" class="text-danger">
+    {{response}}
+   </div>
+    </form>
+</div>

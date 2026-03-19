@@ -1,0 +1,45 @@
+<p>book-types works!</p>
+<table class="table">
+    <thead class="black white-text">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let data of Types">
+          <tr>
+              <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          </tr>
+      </tbody>
+</table>
+
+<!-- <div class="d-flex justify-content-center mt-52">
+  <form [formGroup]="BookAddNew" (ngSubmit)="OnSubmit()">
+
+ <div class="form-group " >
+   <label for="name">Add New Book</label>&nbsp;
+   <input formControlName ="name" type="text" placeholder="BookAdd">
+ </div>
+<button class="btn btn-primary">Submit</button>
+ </form>
+</div> -->
+
+
+
+
+
+
+<button (click)="ChildCalled()" class="btn btn-primary">Child Called Increment</button>&nbsp;
+
+<button (click)="ChildCalledDec()" class="btn btn-primary">Child Called Decrement</button>
+
+
+
+
+<app-child></app-child>
+
+
+
+
+
