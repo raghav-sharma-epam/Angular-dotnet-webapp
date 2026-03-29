@@ -80,7 +80,7 @@ namespace API.Controllers.Repository
         {
             if (file == null || file.Length == 0) return blogImage;
 
-            var imagesFolder = Path.Combine(webHostEnvironment.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"), "images");
+            var imagesFolder = Path.Combine(webHostEnvironment.ContentRootPath, "images");
             if (!Directory.Exists(imagesFolder))
             {
                 Directory.CreateDirectory(imagesFolder);
